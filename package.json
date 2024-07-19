@@ -1,0 +1,35 @@
+{
+  "name": "supercut",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "supercut": "bin/supercut.js"
+  },
+  "type": "module",
+  "scripts": {
+    "watch": "tsup --watch",
+    "build": "tsc --noemit && tsup ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "Daeinc",
+  "devDependencies": {
+    "@types/fluent-ffmpeg": "^2.1.24",
+    "@types/node": "^20.14.11",
+    "@types/play-sound": "^1.1.2",
+    "esbuild": "^0.23.0",
+    "prettier": "^3.3.3",
+    "tsup": "^8.1.2",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@daeinc/math": "^0.7.0",
+    "@google/generative-ai": "^0.15.0",
+    "@thi.ng/arrays": "^2.9.10",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5",
+    "file-type": "^19.2.0",
+    "fluent-ffmpeg": "^2.1.3",
+    "kleur": "^4.1.5"
+  }
+}
