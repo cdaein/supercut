@@ -2,7 +2,7 @@
 
 #cli #ml #gemini #nodejs
 
-Automataic supercut video generation with Google Gemini. You can ask it to search for moments of a video (ex. "Find every moment the speaker says _something_") and it will respond with timestamps. Then, corresponding video clips are rendered and stitched together to create a montage video. You can also provide a folder of multiple videos, then the program will generate a supercut video.
+Automataic supercut video generation with Google Gemini. You can ask it to search for moments of a video (ex. "Find every moment the speaker says _something_") and it will respond with timestamps. Then, corresponding video clips are rendered and stitched together to create a montage video. You can also input multiple videos, then the program will generate a supercut video.
 
 ## How to install
 
@@ -11,7 +11,7 @@ Automataic supercut video generation with Google Gemini. You can ask it to searc
 1. Go into the directory: `cd XXXXXXXX`
 1. Install the dependency: `npm i`
 1. Install as a global package (dont' forget the `.`): `npm i -g .`
-1. Now, you can run it with the command `supercut`.
+1. Now, you can run it with the command `supercut` from anywhere.
 
 ## How to use
 
@@ -54,7 +54,7 @@ supercut cliplist --directory ./output/2024.07.17-18.33.42
 ## Available Options
 
 ```sh
-supercut main --video <video_filepath> \
+supercut main --video <filepath> \
              --prompt <prompt> \
              --prompt-prepend <prompt> \
              --prompt-append <prompt> \
@@ -71,16 +71,16 @@ supercut timestamps --id <video_id> \ # video ID retrieved from Google
                     --model <gemini_model> \
                     --help
 
-supercut clips --video <video_filepath> \
+supercut clips --video <filepath> \
                --timestamps <filepath> \ # `response.txt` file with timestamps
                --buffer <value> \
                --random \ # optional. write clip list in random order
                --help
 
-supercut concat --clip-list <cliplist_file> \ # Clip list text file path
+supercut concat --clip-list <text_file> \ # Clip list text file path
                 --help
 
-supercut list-files --num <page_size> \ # how many files to display. max. 100
+supercut list-files --num <value> \ # how many files to display.
                     --help
 
 supercut cliplist --directory <path> \

@@ -9,15 +9,13 @@
   "type": "module",
   "scripts": {
     "watch": "tsup --watch",
-    "build": "tsc --noemit && tsup ./src/index.ts"
+    "build": "tsc --noemit && tsup ./src/index.ts && just copy-files"
   },
   "keywords": [],
   "author": "Daeinc",
   "devDependencies": {
     "@types/fluent-ffmpeg": "^2.1.24",
     "@types/node": "^20.14.11",
-    "@types/play-sound": "^1.1.2",
-    "esbuild": "^0.23.0",
     "prettier": "^3.3.3",
     "tsup": "^8.1.2",
     "typescript": "^5.5.3"
