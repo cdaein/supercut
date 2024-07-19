@@ -92,7 +92,7 @@ supercut cliplist --directory <path> \
 
 ## Handling Multiple Videos
 
-When you supply multiple source videos to create a concatenated video, you may notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. Re-encoding source videos before you run commands help minimize errors.
+When you supply multiple source videos to create a concatenated video, you may notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. Re-encoding source videos before you run commands help minimize errors. The `encode` command also creates segments if video is longer than 1 hour to meet Google requirement.
 
 ```sh
 suprcut encode --directory <dir_path> \ # place videos in a folder to encode
