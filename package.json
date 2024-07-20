@@ -1,6 +1,6 @@
 {
   "name": "supercut",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "type": "module",
   "scripts": {
     "watch": "tsup --watch",
-    "build": "tsc --noemit && tsup ./src/index.ts && just copy-files"
+    "build": "tsc --noemit && tsup ./src/cli/index.ts && just copy-files"
   },
   "keywords": [],
   "author": "Daeinc",
