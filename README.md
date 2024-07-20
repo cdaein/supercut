@@ -6,9 +6,9 @@ Automataic montage video generation with Google Gemini LLM. You can ask it to se
 
 ## Example
 
-I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](https://www.loc.gov/item/2021604036/) and asked to "find street signages." The program created the following montage video:
+I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](https://www.loc.gov/item/2021604036/) and asked to "find street signages." Supercut created the following montage video:
 
-![Example montage video](assets/example.mp4)
+<video width="320" height="240" src="https://github.com/user-attachments/assets/e5335458-ab37-406e-a9ce-020c99f89a19"></video>
 
 ## How to install
 
