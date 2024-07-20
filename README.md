@@ -61,13 +61,14 @@ supercut cliplist --directory ./output/2024.07.17-18.33.42
 
 ```sh
 supercut main --video <filepath> \
-             --prompt <prompt> \
-             --prompt-prepend <prompt> \
-             --prompt-append <prompt> \
-             --buffer <value> \ # add/shrink generated clip length by value in seconds
-             --model <gemini_model> \ # optional. gemini-1.5-flash or gemini-1.5-pro
-             --random \ # optional. the order of video clips will be randomized
-             --help
+              --directory <folder_path> \ # use either --video or --directory, but not both
+              --prompt <prompt> \
+              --prompt-prepend <prompt> \
+              --prompt-append <prompt> \
+              --buffer <value> \ # add/shrink generated clip length by value in seconds
+              --model <gemini_model> \ # optional. gemini-1.5-flash or gemini-1.5-pro
+              --random \ # optional. the order of video clips will be randomized
+              --help
 
 supercut upload --video <video_filepath> \
                 --help
@@ -96,12 +97,13 @@ supercut cliplist --directory <path> \
                   --help
 ```
 
-## Handling Multiple Videos
+## Batch Processing
 
-When you supply multiple source videos to create a concatenated video, you may notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. Re-encoding source videos before you run commands help minimize errors. The `encode` command also creates segments if video is longer than 1 hour to meet Google requirement.
+When you supply multiple source videos, the program processes each video at a time and at the end, it creates a concatenated supercut video. You may, however, notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. of different source videos. Re-encoding before you run commands help minimize errors. Supercut provides the `encode` command to encode vidoes from a directory with the same settings. It also creates segments if video is longer than 1 hour to meet Google requirement.
 
 ```sh
 suprcut encode --directory <dir_path> \ # place videos in a folder to encode
+               --video <video_path...> \ # use either --directory --video, but not both
                --width <value> \ # optional. if you want to resize and crop
                --height <value> \ # optional.
                --help
