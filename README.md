@@ -2,7 +2,13 @@
 
 #cli #ml #gemini #nodejs
 
-Automataic supercut video generation with Google Gemini. You can ask it to search for moments of a video (ex. "Find every moment the speaker says _something_") and it will respond with timestamps. Then, corresponding video clips are rendered and stitched together to create a montage video. You can also input multiple videos, then the program will generate a supercut video.
+Automataic montage video generation with Google Gemini LLM. You can ask it to search for moments of a video (ex. "Find every moment the speaker says _something_") and it will respond with timestamps. Then, corresponding video clips are rendered and stitched together to create a montage video. You can also input multiple videos, then the program will generate a supercut video.
+
+## Example
+
+I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](https://www.loc.gov/item/2021604036/) and asked to "find street signages." The program created the following montage video:
+
+![Example montage video](assets/example.mp4)
 
 ## How to install
 
