@@ -4,12 +4,6 @@
 
 Automataic montage video generation with Google Gemini LLM. You can ask it to search for moments of a video (ex. "Find every moment the speaker says _something_") and it will respond with timestamps. Then, corresponding video clips are rendered and stitched together to create a montage video. You can also input multiple videos, then the program will generate a supercut video.
 
-## Example
-
-I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](https://www.loc.gov/item/2021604036/) and asked to "find street signages." Supercut created the following montage video:
-
-<video width="320" height="240" src="https://github.com/user-attachments/assets/e5335458-ab37-406e-a9ce-020c99f89a19"></video>
-
 ## How to install
 
 1. ffmpeg is required to create video. on Mac: `brew install ffmpeg`
@@ -115,6 +109,16 @@ By default, the script looks for the most common resolution and scale and/or cro
 
 - Each timestamp (and thus generated video clip) will be 1 second or longer because Gemini can only look at video at 1fps. Using `--buffer <negative_value>` option can generate shorter clips but due to video keyframing issue, there may be issues such as frozen frames.
 - You may get a better result (but slower) by using `gemini-1.5-pro` model instead of the default `gemini-1.5-flash` but beware of [the usage limit on the free tier](https://ai.google.dev/pricing).
+
+## Examples
+
+I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](https://www.loc.gov/item/2021604036/) and asked to "find street signages." Supercut created the following montage video:
+
+<video src="https://github.com/user-attachments/assets/e5335458-ab37-406e-a9ce-020c99f89a19"></video>
+
+I uploaded 6 animated films from the silent film era found from The Library of Congress collection, and extracted "text sound effects." Some timestamps were unrelated and had to be removed manually before creating a montage:
+
+<video width="320" height="240" src="https://github.com/user-attachments/assets/4115d49c-14be-45a8-9a1e-3427d6ed65de"></video>
 
 ## References
 
