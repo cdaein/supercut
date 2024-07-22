@@ -6,9 +6,9 @@ Automataic montage video generation with Google Gemini LLM. You can ask it to se
 
 ## How to install
 
-1. ffmpeg is required to create video. on Mac: `brew install ffmpeg`
-1. Clone this repo: `git clone XXXXXXXX`
-1. Go into the directory: `cd XXXXXXXX`
+1. ffmpeg is required to create video. On Mac: `brew install ffmpeg`
+1. Clone this repo: `git clone https://github.com/cdaein/supercut.git`
+1. Change directory to the local repo: `cd supercut`
 1. Install the dependency: `npm i`
 1. Install as a global package (dont' forget the `.`): `npm i -g .`
 1. Now, you can run it with the command `supercut` from anywhere.
@@ -93,7 +93,7 @@ supercut cliplist --directory <path> \
 
 ## Batch Processing
 
-When you supply multiple source videos, the program processes each video at a time and at the end, it creates a concatenated supercut video. You may, however, notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. of different source videos. Re-encoding before you run commands help minimize errors. Supercut provides the `encode` command to encode vidoes from a directory with the same settings. It also creates segments if video is longer than 1 hour to meet Google requirement.
+When you supply multiple source videos, the program processes each video at a time and at the end, it creates a concatenated supercut video. You may, however, notice that it throws an error, audio is out of sync or frames are frozen. It is due to differences in resolution, frame rate, video keyframes, number of audio channels (ex. 5.1), etc. of different source videos. Re-encoding before you run commands helps minimize errors. Supercut provides the `encode` command to encode vidoes from a directory with the same settings. It also creates segments if video is longer than 1 hour to meet Google requirement.
 
 ```sh
 suprcut encode --directory <dir_path> \ # place videos in a folder to encode
@@ -107,7 +107,7 @@ By default, the script looks for the most common resolution and scale and/or cro
 
 ## Notes
 
-- Each timestamp (and thus generated video clip) will be 1 second or longer because Gemini can only look at video at 1fps. Using `--buffer <negative_value>` option can generate shorter clips but due to video keyframing issue, there may be issues such as frozen frames.
+- Each timestamp (and thus generated video clip) will be 1 second or longer because Gemini can only look at video at 1 fps. Using `--buffer <negative_value>` option can generate shorter clips but due to video keyframing issue, there may be issues such as frozen frames.
 - You may get a better result (but slower) by using `gemini-1.5-pro` model instead of the default `gemini-1.5-flash` but beware of [the usage limit on the free tier](https://ai.google.dev/pricing).
 
 ## Examples
@@ -119,6 +119,12 @@ I uploaded a 13-minute long public domain documentary [A Bronx Morning (1931)](h
 I uploaded 6 animated films from the silent film era found from The Library of Congress collection, and extracted "text sound effects." Some timestamps were unrelated and had to be removed manually before creating a montage:
 
 <video width="320" height="240" src="https://github.com/user-attachments/assets/4115d49c-14be-45a8-9a1e-3427d6ed65de"></video>
+
+## Uninstall
+
+1. First, check whether it is installed as a global package: `npm ls -g`.
+2. If it is, uninstall with the command: `npm uninstall -g supercut`.
+3. Remove the cloned folder. 
 
 ## References
 
