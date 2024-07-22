@@ -122,8 +122,8 @@ I uploaded 6 animated films from the silent film era found from The Library of C
 
 ## Uninstall
 
-1. First, check whether it is installed as a global package: `npm ls -g`.
-2. If it is, uninstall with the command: `npm uninstall -g supercut`.
+1. First, check whether it is installed as a global package: `npm ls -g`
+2. If it is, uninstall with the command: `npm uninstall -g supercut`
 3. Remove the cloned folder. 
 
 ## References
