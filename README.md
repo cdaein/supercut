@@ -109,6 +109,7 @@ By default, the script looks for the most common resolution and scale and/or cro
 
 - Each timestamp (and thus generated video clip) will be 1 second or longer because Gemini can only look at video at 1 fps. Using `--buffer <negative_value>` option can generate shorter clips but due to video keyframing issue, there may be issues such as frozen frames.
 - You may get a better result (but slower) by using `gemini-1.5-pro` model instead of the default `gemini-1.5-flash` but beware of [the usage limit on the free tier](https://ai.google.dev/pricing).
+- I've noticed that Gemini doesn't do well on searching for audio phrases only. If you are not searching for image content, [videogrep](https://github.com/antiboredom/videogrep) is a great option.
 
 ## Examples
 
@@ -124,7 +125,7 @@ I uploaded 6 animated films from the silent film era found from The Library of C
 
 1. First, check whether it is installed as a global package: `npm ls -g`
 2. If it is, uninstall with the command: `npm uninstall -g supercut`
-3. Remove the cloned folder. 
+3. Remove the cloned folder.
 
 ## References
 
